@@ -9,7 +9,7 @@ const IndexPage = () => {
   return (
     <main>
       <Layout pageTitle="Home Page">
-        <p>I designed a rainbow magic fairy. So cool. So stylish</p>
+        <p>I designed a rainbow magic fairy. So cool. So stylish.</p>
         <StaticImage
           src="../images/rainbow-magic.png"
           alt="Custom Rainbow Magic Fairy. It's creative and inspired really"
