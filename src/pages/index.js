@@ -4,6 +4,7 @@ import AboutPage from "./AboutPage";
 import { Link } from "gatsby";
 import Layout from "./Layout";
 import { StaticImage } from "gatsby-plugin-image";
+import Seo from "../Seo";
 
 const IndexPage = () => {
   return (
@@ -19,5 +20,5 @@ const IndexPage = () => {
   );
 };
 
-export const Head = () => <title>Home Page</title>;
+export const Head = () => <Seo title="Home" />;
 export default IndexPage;
