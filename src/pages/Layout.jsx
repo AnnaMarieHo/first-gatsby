@@ -2,9 +2,11 @@ import * as React from "react";
 import { Link } from "gatsby";
 import "./Layout.css";
 import { useStaticQuery, graphql } from "gatsby";
-import BlogPage from "./Blog";
-
-export default function Layout({ pageTitle, children }) {
+// import RecipeTemplate from "./recipes/template";
+// import Recipe from "./recipe";
+export default function Layout({ pageTitle, children, pageContext }) {
+  const recipe = pageContext;
+  console.log(recipe);
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -31,9 +33,14 @@ export default function Layout({ pageTitle, children }) {
               About
             </Link>
           </li>
-          <li className="nav-links">
+          <li className="nav-link-item">
             <Link to="/Blog" className="nav-link-text">
               BlogPage
+            </Link>
+          </li>
+          <li className="nav-link-item">
+            <Link to="/template" className="nav-link-text">
+              Recipes
             </Link>
           </li>
         </ul>

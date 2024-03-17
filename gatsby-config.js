@@ -5,6 +5,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://www.yourdomain.tld`,
     title: `gatsby-site`,
+    author: `did you forget to add me`,
   },
   plugins: [
     "gatsby-plugin-image",
