@@ -21,34 +21,41 @@ exports.createPages = ({ graphql, actions }) => {
               edges {
                 node {
                   id
+                  cookingTime
+                  difficulty
+                  ingredients
                   path
+                  mediaImage {
+                    mediaImage {
+                      url
+                    }
+                  }
+                  numberOfServings
+                  preparationTime
+                  title
+                  summary {
+                    processed
+                  }
                 }
               }
             }
           }
         }
       `).then((result) => {
+        // const recipePages = result.data.Drupal.nodeRecipes.edges;
         const recipePages = result.data.Drupal.nodeRecipes.edges;
+        console.log("RECIPE PAGES: ", recipePages);
         recipePages.forEach(({ node }) => {
           const recipePath = node.path;
           console.log("NODE: ", node);
-          console.log();
-          console.log("NODE ID: ", node.id);
-          console.log();
-          console.log("NODE PATH: ", node.path);
-          console.log();
 
-          console.log("PATH TYPE: ", typeof node.path);
-          console.log();
-          console.log("ID TYPE: ", typeof node.id);
-          console.log();
-          console.log("NODE TYPE: ", typeof node);
           createPage({
             path: `${recipePath}`,
             component: pathToTemplate,
             context: {
               recipeId: node.id,
               recipePath: node.path,
+              recipeData: node,
             },
           });
         });
