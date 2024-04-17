@@ -5,7 +5,7 @@ on:
     branches: master
 
 jobs:
-  build-and-deploy:
+  build:
     name: Build and deploy Gatsby site
     runs-on: ubuntu-latest
     steps:
@@ -28,12 +28,21 @@ jobs:
       - name: Verify build
         run: ls -la public
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh/
-          echo "${{ secrets.ssh_private_key }}" > ~/.ssh/deploy_key
-          sudo chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H "${{ secrets.host }}" > ~/.ssh/known_hosts
+          echo "${{ secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/github_deploy_key
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "${{ secrets.HOST }}" >> ~/.ssh/known_hosts
+          grep -q "${{ secrets.HOST }}" ~/.ssh/known_hosts || ssh-keyscan -H "${{ secrets.HOST }}" >> ~/.ssh/known_hosts
 
-      - name: SFTP upload
-        run: sftp -i ~/.ssh/deploy_key ${{ secrets.deploy_user }}@${{ secrets.host }} <<< $'cd ${{ secrets.destination_path }} \n put -r public/*'
+      - name: Use SSH Key for Deployment
+        env:
+          SSH_PRIVATE_KEY_PATH: ~/.ssh/id_rsa # Change this to the appropriate path for your SSH key
+        run: |
+          ssh student09@foo.wendell.tech "command_to_deploy"

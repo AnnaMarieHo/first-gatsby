@@ -10,7 +10,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const pathToTemplate = path.resolve(`./src/pages/template.js`);
+    const pathToTemplate = path.resolve(`./src/pages/recipe.js`);
 
     // Fetch data from Drupal
     resolve(

@@ -2,7 +2,6 @@ import * as React from "react";
 import Layout from "./Layout";
 import Seo from "../Seo";
 import { graphql } from "gatsby";
-import Template from "./template";
 
 const BlogPage = ({ data }) => {
   return (
