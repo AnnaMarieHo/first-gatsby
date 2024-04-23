@@ -12,16 +12,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20.11.0"
-
-      - name: Install Project Dependencies
-        run: npm ci
-      - name: Install Gatsby CLI
-        run: npm install -g gatsby-cli@5.13.2
-
       - name: Build
         run: gatsby build
 
@@ -43,6 +33,6 @@ jobs:
 
       - name: Use SSH Key for Deployment
         env:
-          SSH_PRIVATE_KEY_PATH: ~/.ssh/id_rsa # Change this to the appropriate path for your SSH key
+          SSH_PRIVATE_KEY_PATH: ~/.ssh/id_rsa
         run: |
           ssh student09@foo.wendell.tech rsync -avh /mnt/c/users/aymie/Documents/GitHub/first-gatsby-site/public/. student09@foo.wendell.tech:site/html

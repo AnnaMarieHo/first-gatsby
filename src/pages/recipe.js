@@ -4,10 +4,6 @@ import Layout from "./Layout";
 import { useStaticQuery, graphql } from "gatsby";
 
 const RecipeTemplate = (props) => {
-  // const data = {
-  //   nodeFood: props.pageContext.data,
-  // };
-
   const data = useStaticQuery(graphql`
     query {
       Drupal {
@@ -22,17 +18,6 @@ const RecipeTemplate = (props) => {
       }
     }
   `);
-
-  // console.log(data.Drupal.nodeRecipes.edges[0].node.path);
-  // console.log("Paths of the first 10 recipes:");
-
-  // console.log(data.Drupal.nodeRecipes.edges.node.path);
-  // const path = data.Drupal.nodeRecipes.edges.node;
-  // console.log("DATA", path);
-
-  // const paths = props.pageContext.path.map((ingredient, index) => (
-  //   <p key={index}>{ingredient}</p>
-  // ));
 
   return (
     <Layout>

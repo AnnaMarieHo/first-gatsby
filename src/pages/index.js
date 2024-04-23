@@ -2,6 +2,7 @@ import * as React from "react";
 import AboutPage from "./AboutPage";
 import { Link } from "gatsby";
 import Layout from "./Layout";
+import TestComponent from "./TestComponent";
 import { StaticImage } from "gatsby-plugin-image";
 import Seo from "../Seo";
 // import Recipes from "../Components/Recipes";
@@ -15,6 +16,7 @@ const IndexPage = () => {
           src="../images/rainbow-magic.png"
           alt="Custom Rainbow Magic Fairy. It's creative and inspired really"
         />
+        <TestComponent />
       </Layout>
     </main>
   );
