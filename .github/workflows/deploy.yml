@@ -9,6 +9,20 @@ jobs:
     name: Build and deploy Gatsby site
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "14"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install Gatsby CLI
+        run: npm install -g gatsby-cli
+
       - name: Build
         run: gatsby build
 
@@ -18,7 +32,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
     steps:
       - name: Setup SSH
         run: |

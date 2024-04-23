@@ -18,7 +18,7 @@ export default function AboutPage() {
         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
       }}
     >
-      This my test component
+      This is testComponent 1
     </p>
   );
 }
