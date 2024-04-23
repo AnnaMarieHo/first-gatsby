@@ -4,6 +4,6 @@ import TestComponent from "./TestComponent";
 
 test("renders TestComponent component", () => {
   render(<TestComponent />);
-  const paragraphElement = screen.getByText("This my test component");
+  const paragraphElement = screen.getByText("This is testComponent 1");
   expect(paragraphElement).toBeInTheDocument();
 });
