@@ -42,7 +42,6 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       `).then((result) => {
-        // const recipePages = result.data.Drupal.nodeRecipes.edges;
         const recipePages = result.data.Drupal.nodeRecipes.edges;
         console.log("RECIPE PAGES: ", recipePages);
         recipePages.forEach(({ node }) => {
