@@ -36,12 +36,10 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh/
-          echo "${{ secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/github_deploy_key
-          sudo chmod 600 ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H "${{ secrets.HOST }}" >> ~/.ssh/known_hosts
 
       - name: Use SSH Key for Deployment
-        env:
-          SSH_PRIVATE_KEY_PATH: ~/.ssh/id_rsa
         run: |
           ssh student09@foo.wendell.tech rsync -avh /mnt/c/users/aymie/Documents/GitHub/first-gatsby-site/public/. student09@foo.wendell.tech:site/html
