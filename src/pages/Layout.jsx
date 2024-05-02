@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import "./Layout.css";
 import { useStaticQuery, graphql } from "gatsby";
 // import RecipeTemplate from "./recipes/template";
-// import Recipe from "./recipe";
 export default function Layout({ pageTitle, children, pageContext }) {
   const recipe = pageContext;
   console.log(recipe);
