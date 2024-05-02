@@ -34,7 +34,7 @@ const RecipeTemplate = (props) => {
             </Link>
           ))}
         </div>
-        {hasPageContextData && ( // Conditionally render content if props.pageContext has data
+        {hasPageContextData && (
           <div
             style={{
               display: "flex",
