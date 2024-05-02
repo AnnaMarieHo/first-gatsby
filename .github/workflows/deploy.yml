@@ -43,3 +43,5 @@ jobs:
       - name: Use SSH Key for Deployment
         run: |
           ssh student09@foo.wendell.tech rsync -avh /mnt/c/users/aymie/Documents/GitHub/first-gatsby-site/public/. student09@foo.wendell.tech:site/html
+
+#a comment
