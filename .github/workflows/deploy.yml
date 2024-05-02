@@ -40,8 +40,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H "${{ secrets.HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Use SSH Key for Deployment
-        run: |
-          ssh student09@foo.wendell.tech rsync -avh /mnt/c/users/aymie/Documents/GitHub/first-gatsby-site/public/. student09@foo.wendell.tech:site/html
+      - name: SFTP upload
+        run: run: sftp -i ~/.ssh/id_rsa student09@${{ secrets.HOST }} <<< $'cd site/html \n put -r /mnt/c/users/aymie/Documents/GitHub/first-gatsby-site/public/*'
 
 #a comment
