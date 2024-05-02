@@ -41,5 +41,5 @@ jobs:
           ssh-keyscan -H "${{ secrets.HOST }}" >> ~/.ssh/known_hosts
 
       - name: SFTP upload
-        run: sftp -i ~/.ssh/id_rsa student09@${{ secrets.HOST }} <<< $'cd site/html \n put -r /mnt/c/users/aymie/Documents/GitHub/first-gatsby-site/public/*'
+        run: sftp -i ~/.ssh/id_rsa student09@${{ secrets.HOST }} <<< $'cd site/html \n put -r /mnt/c/users/aymie/Documents/GitHub/first-gatsby-site/public/'
 #a comment
