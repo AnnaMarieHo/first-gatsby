@@ -36,8 +36,7 @@
 }
 
 .recipe-link:hover {
-  background-color: #525252; /* Background color on hover */
-  transition: 0.3s;
+  background-color: #525252;
 }
 .recipe-link:active {
   background-color: #2e2e2e; /* Background color on hover */
