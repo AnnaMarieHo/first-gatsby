@@ -2,7 +2,6 @@ import * as React from "react";
 import { Link } from "gatsby";
 import "./Layout.css";
 import { useStaticQuery, graphql } from "gatsby";
-// import RecipeTemplate from "./recipes/template";
 export default function Layout({ pageTitle, children, pageContext }) {
   const recipe = pageContext;
   console.log(recipe);
