@@ -5,7 +5,6 @@ import Layout from "./Layout";
 import TestComponent from "./TestComponent";
 import { StaticImage } from "gatsby-plugin-image";
 import Seo from "../Seo";
-// import Recipes from "../Components/Recipes";
 
 const IndexPage = () => {
   return (
