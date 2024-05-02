@@ -15,7 +15,7 @@ const IndexPage = () => {
           src="../images/rainbow-magic.png"
           alt="Custom Rainbow Magic Fairy. It's creative and inspired really"
         />
-        <TestComponent />
+        {/* <TestComponent /> */}
       </Layout>
     </main>
   );
