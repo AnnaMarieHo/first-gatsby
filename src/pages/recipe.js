@@ -19,7 +19,6 @@ const RecipeTemplate = (props) => {
     }
   `);
 
-  // Checking if props.pageContext has data
   const hasPageContextData = props.pageContext && props.pageContext.recipeData;
   console.log("HAS CONTENT", hasPageContextData);
 
